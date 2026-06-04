@@ -1,0 +1,48 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Backend (FastAPI)",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "main:app",
+        "--reload",
+        "--port",
+        "8000"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/venv/Scripts/python.exe",
+      "justMyCode": true
+    },
+    {
+      "name": "Debug Worker",
+      "type": "python",
+      "request": "launch",
+      "program": "local_consumer.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/worker",
+      "python": "${workspaceFolder}/venv/Scripts/python.exe",
+      "justMyCode": true
+    },
+    {
+      "name": "Debug Frontend (Chrome)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend",
+      "preLaunchTask": "Start Frontend"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug All Services",
+      "configurations": [
+        "Debug Backend (FastAPI)",
+        "Debug Worker",
+        "Debug Frontend (Chrome)"
+      ]
+    }
+  ]
+}

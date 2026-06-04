@@ -1,0 +1,21 @@
+{
+  "QUEUE_FILE": "../queue.json",
+  "UPLOAD_DIR": "../downloads",
+  "AWS_REGION": "ap-south-1",
+  "QUEUE_URL": "",
+  "model": "gemini-flash-latest",
+  "pipeline": {
+    "download_video": true,
+    "upload_to_gemini": true,
+    "analyze_video": true
+  },
+  "analysis": {
+    "compare_with_golden": true,
+    "generate_mcqs": true,
+    "generate_transcripts": true,
+    "generate_scene_summary": true,
+    "generate_motion_analysis": true,
+    "generate_safety_analysis": true,
+    "generate_missing_steps": true
+  }
+}
